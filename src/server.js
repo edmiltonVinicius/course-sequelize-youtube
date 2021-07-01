@@ -1,10 +1,10 @@
-import './database/index.js'
-import express from 'express'
+require('./database/index.js')
+const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
-import cookieParser from 'cookie-parser'
-import cors from 'cors'
-import routes  from './routes/routes.js'
+const cookieParser = require('cookie-parser')
+const cors = require('cors')
+const routes  = require('./routes/routes.js')
 
 app.use(cors())
 app.use(cookieParser())
