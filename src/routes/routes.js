@@ -8,5 +8,6 @@ router.get('/', (request, response) => {
 })
 
 router.get('/usuario', UsuarioController.index)
+router.get('/usuario/:id', UsuarioController.findById)
 
 module.exports = router

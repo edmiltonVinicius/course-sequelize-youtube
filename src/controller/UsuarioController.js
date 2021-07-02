@@ -5,6 +5,18 @@ async function index(request, response) {
     return response.status(200).json(usuario)
 }
 
+async function findById(request, response) {
+    const { id } = request.params
+
+    const usuario = await Usuario.findAll({
+        where: {
+            id
+        }
+    })
+    return response.status(200).json(usuario)
+}
+
 module.exports = {
-    index
+    index,
+    findById
 }
