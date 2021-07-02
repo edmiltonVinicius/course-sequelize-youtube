@@ -27,8 +27,20 @@ async function store(request, response) {
     return response.status(200).json(usuario)
 }
 
+async function deleteUsuario(request, response) {
+    const { id } = request.params
+
+    const usuario = await Usuario.destroy({
+        where: {
+            id
+        }
+    })
+    return response.status(200).json(usuario)
+}
+
 module.exports = {
     index,
     findById,
-    store
+    store,
+    deleteUsuario
 }
