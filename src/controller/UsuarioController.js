@@ -38,9 +38,25 @@ async function deleteUsuario(request, response) {
     return response.status(200).json(usuario)
 }
 
+async function update(request, response) {
+    const { id, name, password } = request.body
+
+    const usuario = await Usuario.update({
+        name,
+        password
+    }, {
+        where: {
+            id
+        }
+    })
+
+    return response.status(200).json(usuario)
+}
+
 module.exports = {
     index,
     findById,
     store,
-    deleteUsuario
+    deleteUsuario,
+    update
 }
