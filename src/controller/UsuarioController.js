@@ -16,7 +16,19 @@ async function findById(request, response) {
     return response.status(200).json(usuario)
 }
 
+async function store(request, response) {
+    const { name, password } = request.body
+
+    const usuario = await Usuario.create({
+        name,
+        password
+    })
+
+    return response.status(200).json(usuario)
+}
+
 module.exports = {
     index,
-    findById
+    findById,
+    store
 }
