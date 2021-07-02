@@ -3,7 +3,7 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         // Cria a tabela 'usuario' é o nome da tabela
-        return queryInterface.createTable('usuario', {
+        return queryInterface.createTable('usuarios', {
             id: {
                 type: Sequelize.INTEGER,
                 primaryKey: true,

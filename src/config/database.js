@@ -5,7 +5,7 @@ module.exports = {
     password: null,
     database: 'course_sequelize_youtube',
     define: {
-        timestamps: true,
+        timestamps: false,
         underscored: true
     }
 }
